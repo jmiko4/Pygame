@@ -7,10 +7,10 @@ class ball():
         #establish variables
         self.center_x = 200
         self.center_y = 200
-        self.center = (self.center_x, self.center_y)
+        self.center = [self.center_x, self.center_y]
         self.velocity_dx = 1
         self.velocity_dy = 1
 
-    def draw(self):
+    def draw(self, screen, color):
         #draw the ball to the screen
-        pygame.draw.circle(surface, color, self.center, radius)
+        pygame.draw.circle(screen, color, self.center, 10)

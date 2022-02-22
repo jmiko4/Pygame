@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+from ball import ball
 print("edit")
 
 pygame.init()
@@ -43,7 +44,9 @@ while carryOn:
     # First, clear the screen to dark blue. 
     screen.fill(DARKBLUE)
     pygame.draw.line(screen, WHITE, [0, 38], [800, 38], 2)
- 
+    ball = ball()
+    ball.draw(screen, WHITE)
+
     #Display the score and the number of lives at the top of the screen
     font = pygame.font.Font(None, 34)
     text = font.render("Score: " + str(score), 1, WHITE)
@@ -55,7 +58,7 @@ while carryOn:
     pygame.display.flip()
      
     # --- Limit to 60 frames per second
-    clock.tick(60)
+    clock.tick(FPS)
  
 #Once we have exited the main program loop we can stop the game engine:
 pygame.quit()
