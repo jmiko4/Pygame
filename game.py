@@ -2,5 +2,17 @@ import pygame
 from pygame.locals import *
 print("edit")
 
+pygame.init()
+vec = pygame.math.Vector2  # 2 for two dimensional
+ 
+HEIGHT = 850
+WIDTH = 800
+ACC = 0.5
+FRIC = -0.12
+FPS = 60
+ 
+FramePerSec = pygame.time.Clock()
+ 
+displaysurface = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Game")
 
-pygame.draw.circle()
