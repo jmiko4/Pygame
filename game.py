@@ -31,6 +31,8 @@ pygame.display.set_caption("Breakout")
 
 clock = pygame.time.Clock()
 
+ball = ball()
+
 while carryOn:
     # --- Main event loop
     for event in pygame.event.get(): # User did something
@@ -44,7 +46,6 @@ while carryOn:
     # First, clear the screen to dark blue. 
     screen.fill(DARKBLUE)
     pygame.draw.line(screen, WHITE, [0, 38], [800, 38], 2)
-    ball = ball()
     ball.draw(screen, WHITE)
 
     #Display the score and the number of lives at the top of the screen
