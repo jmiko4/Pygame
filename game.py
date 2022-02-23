@@ -40,7 +40,8 @@ while carryOn:
               carryOn = False # Flag that we are done so we exit this loop
  
     # --- Game logic should go here
- 
+    ball.advance()
+    print (ball.center_y, ball.center_x)
  
     # --- Drawing code should go here
     # First, clear the screen to dark blue. 
