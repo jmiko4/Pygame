@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 from ball import ball
+from paddle import Paddle
 print("edit")
 
 pygame.init()
@@ -29,6 +30,16 @@ FramePerSec = pygame.time.Clock()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Breakout")
 
+paddle = Paddle(WHITE, 100, 10)
+paddle.rect.x = 20
+paddle.rect.y = 200
+
+#This will be a list that will contain all the sprites we intend to use in our game.
+all_sprites_list = pygame.sprite.Group()
+ 
+# Add the paddle to the list of sprites
+all_sprites_list.add(paddle)
+
 clock = pygame.time.Clock()
 
 ball = ball()
@@ -40,6 +51,16 @@ while carryOn:
               carryOn = False # Flag that we are done so we exit this loop
  
     # --- Game logic should go here
+
+    # --- Paddle key binding 
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        paddle.moveLeft(5, 0)
+    if keys[pygame.K_RIGHT]:
+        paddle.moveRight(5, 1280)    
+ 
+    # --- Game logic should go here
+    all_sprites_list.update()
  
  
     # --- Drawing code should go here
