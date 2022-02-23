@@ -15,8 +15,8 @@ class ball():
         #draw the ball to the screen
         pygame.draw.circle(screen, color, self.center, 10)
 
-    def bounce_vertical():
-        pass
+    def bounce_vertical(self):
+        self.velocity_dy *= -1
 
-    def bounce_horizontal():
-        pass
+    def bounce_horizontal(self):
+        self.velocity_dx *= -1
