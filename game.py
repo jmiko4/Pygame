@@ -82,7 +82,7 @@ while carryOn:
     ball.draw(screen, WHITE)
 
     #Now let's draw all the sprites in one go. (For now we only have 2 sprites!)
-    #all_sprites_list.draw(screen)
+    all_sprites_list.draw(screen)
 
     #Display the score and the number of lives at the top of the screen
     font = pygame.font.Font(None, 34)
