@@ -43,6 +43,16 @@ while carryOn:
                      carryOn=False
     # --- Game logic should go here
     ball.advance()
+
+        #bounce off walls
+    if ball.center_x < 0 and ball.velocity_dx < 0:
+        ball.bounce_horizontal()
+    if ball.center_x > WIDTH and ball.velocity_dx > 0:
+        ball.bounce_horizontal()
+    if ball.center_y < 0 and ball.velocity_dy < 0:
+        ball.bounce_vertical()
+    if ball.center_y > HEIGHT and ball.velocity_dy > 0:
+        ball.bounce_vertical()
  
     # --- Drawing code should go here
     # First, clear the screen to dark blue. 
@@ -51,7 +61,7 @@ while carryOn:
     ball.draw(screen, WHITE)
 
     #Now let's draw all the sprites in one go. (For now we only have 2 sprites!)
-    all_sprites_list.draw(screen)
+    #all_sprites_list.draw(screen)
 
     #Display the score and the number of lives at the top of the screen
     font = pygame.font.Font(None, 34)
