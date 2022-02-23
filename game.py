@@ -21,8 +21,8 @@ YELLOW = (255,255,0)
 
 # --- Drawing the paddle sprite
 paddle = Paddle(WHITE, 100, 10)
-paddle.rect.x = 20
-paddle.rect.y = 200
+paddle.rect.x = 700
+paddle.rect.y = 700
  
 #This will be a list that will contain all the sprites we intend to use in our game.
 all_sprites_list = pygame.sprite.Group()
@@ -58,7 +58,7 @@ while carryOn:
     if keys[pygame.K_LEFT]:
         paddle.moveLeft(5, 0)
     if keys[pygame.K_RIGHT]:
-        paddle.moveRight(5, 700) 
+        paddle.moveRight(5, 1280) 
 
     # --- Game logic should go here
     all_sprites_list.update()
