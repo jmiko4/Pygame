@@ -18,8 +18,10 @@ class ball():
         self.center_x += self.velocity_dx
         self.center_y += self.velocity_dy
 
+    #changes the vertical direction of the ball
     def bounce_vertical(self):
         self.velocity_dy *= -1
 
+    #changes the horizontal direction of the ball
     def bounce_horizontal(self):
         self.velocity_dx *= -1
