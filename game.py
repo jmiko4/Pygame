@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 from ball import ball
+from paddle import Paddle
 print("edit")
 
 pygame.init()
@@ -18,6 +19,17 @@ LIGHTBLUE = (0,176,240)
 RED = (255,0,0)
 ORANGE = (255,100,0)
 YELLOW = (255,255,0)
+
+# --- Drawing the paddle sprite
+paddle = Paddle(WHITE, 100, 10)
+paddle.rect.x = 20
+paddle.rect.y = 200
+ 
+#This will be a list that will contain all the sprites we intend to use in our game.
+all_sprites_list = pygame.sprite.Group()
+ 
+# Add the paddle to the list of sprites
+all_sprites_list.add(paddle)
 
 score = 0
 lives = 3
@@ -41,7 +53,16 @@ while carryOn:
         elif event.type==pygame.KEYDOWN:
                 if event.key==pygame.K_x: #Pressing the x Key will quit the game
                      carryOn=False
+
+    #Moving the paddle when the use uses the arrow keys
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        paddle.moveLeft(5, 0)
+    if keys[pygame.K_RIGHT]:
+        paddle.moveRight(5, 700) 
+
     # --- Game logic should go here
+    all_sprites_list.update()
     ball.advance()
 
         #bounce off walls
