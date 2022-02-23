@@ -14,3 +14,9 @@ class ball():
     def draw(self, screen, color):
         #draw the ball to the screen
         pygame.draw.circle(screen, color, self.center, 10)
+
+    def bounce_vertical():
+        pass
+
+    def bounce_horizontal():
+        pass
