@@ -64,7 +64,7 @@ while carryOn:
     all_sprites_list.update()
     ball.advance()
 
-        #bounce off walls
+    #bounce off walls
     if ball.center_x < 0 and ball.velocity_dx < 0:
         ball.bounce_horizontal()
     if ball.center_x > WIDTH and ball.velocity_dx > 0:
