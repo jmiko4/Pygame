@@ -2,7 +2,6 @@ import pygame
 from pygame.locals import *
 from ball import ball
 from paddle import Paddle
-print("edit")
 
 pygame.init()
 vec = pygame.math.Vector2  # 2 for two dimensional
