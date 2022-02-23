@@ -55,7 +55,7 @@ while carryOn:
                      carryOn=False
 
     #Moving the paddle when the use uses the arrow keys
-     keys = pygame.key.get_pressed()
+    keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
         paddle.moveLeft(5, 0)
     if keys[pygame.K_RIGHT]:
