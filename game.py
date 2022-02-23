@@ -21,8 +21,8 @@ YELLOW = (255,255,0)
 
 # --- Drawing the paddle sprite
 paddle = Paddle(WHITE, 100, 10)
-paddle.rect.x = 20
-paddle.rect.y = 200
+paddle.rect.x = 700
+paddle.rect.y = 700
  
 #This will be a list that will contain all the sprites we intend to use in our game.
 all_sprites_list = pygame.sprite.Group()
