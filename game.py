@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
 from ball import ball
-print("edit")
+from paddle import Paddle
 
 pygame.init()
 vec = pygame.math.Vector2  # 2 for two dimensional
@@ -18,6 +18,17 @@ LIGHTBLUE = (0,176,240)
 RED = (255,0,0)
 ORANGE = (255,100,0)
 YELLOW = (255,255,0)
+
+# --- Drawing the paddle sprite
+paddle = Paddle(WHITE, 100, 10)
+paddle.rect.x = 20
+paddle.rect.y = 200
+ 
+#This will be a list that will contain all the sprites we intend to use in our game.
+all_sprites_list = pygame.sprite.Group()
+ 
+# Add the paddle to the list of sprites
+all_sprites_list.add(paddle)
 
 score = 0
 lives = 3
@@ -41,9 +52,27 @@ while carryOn:
         elif event.type==pygame.KEYDOWN:
                 if event.key==pygame.K_x: #Pressing the x Key will quit the game
                      carryOn=False
+
+    #Moving the paddle when the use uses the arrow keys
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        paddle.moveLeft(5, 0)
+    if keys[pygame.K_RIGHT]:
+        paddle.moveRight(5, 1280) 
+
     # --- Game logic should go here
+    all_sprites_list.update()
     ball.advance()
-    print (ball.center_y, ball.center_x)
+
+        #bounce off walls
+    if ball.center_x < 0 and ball.velocity_dx < 0:
+        ball.bounce_horizontal()
+    if ball.center_x > WIDTH and ball.velocity_dx > 0:
+        ball.bounce_horizontal()
+    if ball.center_y < 0 and ball.velocity_dy < 0:
+        ball.bounce_vertical()
+    if ball.center_y > HEIGHT and ball.velocity_dy > 0:
+        ball.bounce_vertical()
  
     # --- Drawing code should go here
     # First, clear the screen to dark blue. 
@@ -52,7 +81,7 @@ while carryOn:
     ball.draw(screen, WHITE)
 
     #Now let's draw all the sprites in one go. (For now we only have 2 sprites!)
-    all_sprites_list.draw(screen) 
+    all_sprites_list.draw(screen)
 
     #Display the score and the number of lives at the top of the screen
     font = pygame.font.Font(None, 34)
