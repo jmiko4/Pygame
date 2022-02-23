@@ -38,7 +38,9 @@ while carryOn:
     for event in pygame.event.get(): # User did something
         if event.type == pygame.QUIT: # If user clicked close
               carryOn = False # Flag that we are done so we exit this loop
- 
+        elif event.type==pygame.KEYDOWN:
+                if event.key==pygame.K_x: #Pressing the x Key will quit the game
+                     carryOn=False
     # --- Game logic should go here
  
  
@@ -47,6 +49,9 @@ while carryOn:
     screen.fill(DARKBLUE)
     pygame.draw.line(screen, WHITE, [0, 38], [800, 38], 2)
     ball.draw(screen, WHITE)
+
+    #Now let's draw all the sprites in one go. (For now we only have 2 sprites!)
+    all_sprites_list.draw(screen) 
 
     #Display the score and the number of lives at the top of the screen
     font = pygame.font.Font(None, 34)
@@ -59,7 +64,7 @@ while carryOn:
     pygame.display.flip()
      
     # --- Limit to 60 frames per second
-    clock.tick(FPS)
+    clock.tick(60)
  
 #Once we have exited the main program loop we can stop the game engine:
 pygame.quit()
