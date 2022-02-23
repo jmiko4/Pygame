@@ -43,7 +43,6 @@ while carryOn:
                      carryOn=False
     # --- Game logic should go here
     ball.advance()
-    print (ball.center_y, ball.center_x)
  
     # --- Drawing code should go here
     # First, clear the screen to dark blue. 
@@ -52,7 +51,7 @@ while carryOn:
     ball.draw(screen, WHITE)
 
     #Now let's draw all the sprites in one go. (For now we only have 2 sprites!)
-    all_sprites_list.draw(screen) 
+    all_sprites_list.draw(screen)
 
     #Display the score and the number of lives at the top of the screen
     font = pygame.font.Font(None, 34)
