@@ -32,7 +32,7 @@ all_sprites_list.add(paddle)
 
 score = 0
 lives = 3
-ball_velocity = 5
+ball_speed = 5
 
 carryOn = True
  
@@ -43,7 +43,7 @@ pygame.display.set_caption("Breakout")
 
 clock = pygame.time.Clock()
 
-ball = ball(ball_velocity)
+ball = ball(ball_speed)
 
 while carryOn:
     # --- Main event loop
