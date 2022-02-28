@@ -43,7 +43,7 @@ pygame.display.set_caption("Breakout")
 
 clock = pygame.time.Clock()
 
-ball = ball(ball_velocity)
+ball = ball(ball_velocity, 200, 200)
 
 while carryOn:
     # --- Main event loop

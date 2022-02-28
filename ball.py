@@ -3,10 +3,10 @@ from pygame.locals import *
 
 class ball():
 
-    def __init__(self, velocity):
+    def __init__(self, velocity, x_start, y_start):
         #establish variables
-        self.center_x = 200
-        self.center_y = 200
+        self.center_x = x_start
+        self.center_y = y_start
         self.velocity_dx = velocity
         self.velocity_dy = velocity
 
