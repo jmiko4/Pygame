@@ -3,12 +3,12 @@ from pygame.locals import *
 
 class ball():
 
-    def __init__(self):
+    def __init__(self, velocity):
         #establish variables
         self.center_x = 200
         self.center_y = 200
-        self.velocity_dx = 1
-        self.velocity_dy = 1
+        self.velocity_dx = velocity
+        self.velocity_dy = velocity
 
     def draw(self, screen, color):
         #draw the ball to the screen
