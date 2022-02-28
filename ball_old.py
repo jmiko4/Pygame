@@ -1,3 +1,5 @@
+import pygame
+
 class ball():
 
     def __init__(self, velocity, x_start, y_start):
