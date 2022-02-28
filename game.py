@@ -7,7 +7,7 @@ pygame.init()
 vec = pygame.math.Vector2  # 2 for two dimensional
  
 HEIGHT = 720
-WIDTH = 1280
+WIDTH = 800
 ACC = 0.5
 FRIC = -0.12
 FPS = 60
@@ -64,7 +64,7 @@ while carryOn:
     all_sprites_list.update()
     ball.advance()
 
-        #bounce off walls
+    #bounce off walls
     if ball.center_x < 0 and ball.velocity_dx < 0:
         ball.bounce_horizontal()
     if ball.center_x > WIDTH and ball.velocity_dx > 0:
