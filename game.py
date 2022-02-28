@@ -75,13 +75,10 @@ while carryOn:
     if ball.center_y > HEIGHT and ball.velocity_dy > 0:
         ball.bounce_vertical()
 
-<<<<<<< HEAD
 #    if pygame.sprite.collide_mask(ball, paddle):
 #        ball.bounce_vertical()
 
 
-=======
->>>>>>> c91689f5c77cafedd400aeb5639901f94130afc5
     # --- Drawing code should go here
     # First, clear the screen to dark blue. 
     screen.fill(DARKBLUE)
