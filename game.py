@@ -32,7 +32,7 @@ all_sprites_list.add(paddle)
 
 score = 0
 lives = 3
-ball_velocity = 5
+ball_speed = 5
 
 carryOn = True
  
@@ -43,7 +43,11 @@ pygame.display.set_caption("Breakout")
 
 clock = pygame.time.Clock()
 
+<<<<<<< HEAD
 ball = ball(ball_velocity, 200, 200)
+=======
+ball = ball(ball_speed)
+>>>>>>> 7f826af2342f384e68c5161dee0f186e171eaf2c
 
 while carryOn:
     # --- Main event loop
@@ -74,6 +78,10 @@ while carryOn:
         ball.bounce_vertical()
     if ball.center_y > HEIGHT and ball.velocity_dy > 0:
         ball.bounce_vertical()
+
+#    if pygame.sprite.collide_mask(ball, paddle):
+#        ball.bounce_vertical()
+
 
     # --- Drawing code should go here
     # First, clear the screen to dark blue. 
