@@ -9,6 +9,7 @@ class ball():
         self.center_y = 200
         self.velocity_dx = velocity
         self.velocity_dy = velocity
+        self.alive = False
 
     def draw(self, screen, color):
         #draw the ball to the screen

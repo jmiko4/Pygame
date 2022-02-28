@@ -53,6 +53,8 @@ while carryOn:
         elif event.type==pygame.KEYDOWN:
                 if event.key==pygame.K_x: #Pressing the x Key will quit the game
                      carryOn=False
+        if event.type == pygame.K_SPACE:
+            ball.alive = True
 
     #Moving the paddle when the use uses the arrow keys
     keys = pygame.key.get_pressed()
@@ -63,7 +65,8 @@ while carryOn:
 
     # --- Game logic should go here
     all_sprites_list.update()
-    ball.advance()
+    if ball.alive:
+        ball.advance()
 
     #bounce off walls
     if ball.center_x < 10 and ball.velocity_dx < 0:
@@ -72,11 +75,19 @@ while carryOn:
         ball.bounce_horizontal()
     if ball.center_y < 48 and ball.velocity_dy < 0:
         ball.bounce_vertical()
+
+    #respawn if the ball hits the bottom
     if ball.center_y > HEIGHT and ball.velocity_dy > 0:
-        ball.bounce_vertical()
+        if lives > 0:
+            lives -= 1
+            ball.center_x = paddle.rect.x + 50
+            ball.center_y = paddle.rect.y - 13
+            ball.velocity_dx = 0
+            ball.velocity_dy = 0
+            ball.alive = False
 
     # --- Drawing code should go here
-    # First, clear the screen to dark blue. 
+    # First, clear the screen to dark blue.
     screen.fill(DARKBLUE)
     pygame.draw.line(screen, WHITE, [0, 38], [800, 38], 2)
     ball.draw(screen, WHITE)
