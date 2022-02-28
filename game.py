@@ -59,7 +59,7 @@ while carryOn:
     if keys[pygame.K_LEFT]:
         paddle.moveLeft(5, 0)
     if keys[pygame.K_RIGHT]:
-        paddle.moveRight(5, 1280) 
+        paddle.moveRight(5, 800) 
 
     # --- Game logic should go here
     all_sprites_list.update()
