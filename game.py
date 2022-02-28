@@ -73,6 +73,7 @@ while carryOn:
         ball.bounce_vertical()
     if ball.center_y > HEIGHT and ball.velocity_dy > 0:
         ball.bounce_vertical()
+
  
     # --- Drawing code should go here
     # First, clear the screen to dark blue. 
