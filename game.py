@@ -65,14 +65,15 @@ while carryOn:
     ball.advance()
 
     #bounce off walls
-    if ball.center_x < 0 and ball.velocity_dx < 0:
+    if ball.center_x < 10 and ball.velocity_dx < 0:
         ball.bounce_horizontal()
-    if ball.center_x > WIDTH and ball.velocity_dx > 0:
+    if ball.center_x > WIDTH - 10 and ball.velocity_dx > 0:
         ball.bounce_horizontal()
-    if ball.center_y < 0 and ball.velocity_dy < 0:
+    if ball.center_y < 48 and ball.velocity_dy < 0:
         ball.bounce_vertical()
     if ball.center_y > HEIGHT and ball.velocity_dy > 0:
         ball.bounce_vertical()
+
  
     # --- Drawing code should go here
     # First, clear the screen to dark blue. 
