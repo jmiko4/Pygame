@@ -4,6 +4,7 @@ import pygame
 from paddle import Paddle
 from ball import Ball
 from brick import Brick
+import webbrowser
 
 pygame.init()
 
@@ -100,6 +101,7 @@ while carryOn:
             screen.blit(text, (250,300))
             pygame.display.flip()
             pygame.time.wait(3000)
+            webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=61s')
 
             #Stop the Game
             carryOn=False
