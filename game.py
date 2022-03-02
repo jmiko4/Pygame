@@ -123,11 +123,12 @@ while carryOn:
       brick.kill()
       if len(all_bricks)==0:
            #Display Level Complete Message for 3 seconds
-            font = pygame.font.Font(None, 74)
-            text = font.render("LEVEL COMPLETE", 1, WHITE)
+            font = pygame.font.Font(None, 54)
+            text = font.render("CONGRATULATION YOU WON", 1, WHITE)
             screen.blit(text, (200,300))
             pygame.display.flip()
             pygame.time.wait(3000)
+            webbrowser.open('https://www.youtube.com/watch?v=MoI8Z8Dq1yY')
 
             #Stop the Game
             carryOn=False
