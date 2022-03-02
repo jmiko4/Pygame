@@ -17,7 +17,6 @@ YELLOW = (255,255,0)
 
 score = 0
 lives = 3
-ball_speed = 5
 
 # Open a new window
 size = (800, 600)
@@ -66,9 +65,9 @@ carryOn = True
 
 # The clock will be used to control how fast the screen updates
 clock = pygame.time.Clock()
-
 # -------- Main Program Loop -----------
-ball = Ball(ball_speed, 200, 200)
+
+
 
 while carryOn:
     # --- Main event loop
@@ -130,7 +129,7 @@ while carryOn:
 
             #Stop the Game
             carryOn=False
-
+    # --- Drawing code should go here
     # First, clear the screen to dark blue.
     screen.fill(DARKBLUE)
     pygame.draw.line(screen, WHITE, [0, 38], [800, 38], 2)
