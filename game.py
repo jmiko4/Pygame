@@ -4,6 +4,7 @@ import pygame
 from paddle import Paddle
 from ball import Ball
 from brick import Brick
+import webbrowser
 
 pygame.init()
 
@@ -39,19 +40,19 @@ ball.rect.y = 195
 all_bricks = pygame.sprite.Group()
 for i in range(7):
     brick = Brick(RED,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 60
     all_sprites_list.add(brick)
     all_bricks.add(brick)
 for i in range(7):
     brick = Brick(ORANGE,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 100
     all_sprites_list.add(brick)
     all_bricks.add(brick)
 for i in range(7):
     brick = Brick(YELLOW,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 140
     all_sprites_list.add(brick)
     all_bricks.add(brick)
@@ -100,6 +101,7 @@ while carryOn:
             screen.blit(text, (250,300))
             pygame.display.flip()
             pygame.time.wait(3000)
+            webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=61s')
 
             #Stop the Game
             carryOn=False
