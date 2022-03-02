@@ -106,7 +106,7 @@ while carryOn:
             #Stop the Game
             carryOn=False
 
-    if ball.rect.y<40:
+    if ball.rect.y < 40:
         ball.velocity[1] = -ball.velocity[1]
 
     #Detect collisions between the ball and the paddles
@@ -121,7 +121,7 @@ while carryOn:
       ball.bounce()
       score += 1
       brick.kill()
-      if len(all_bricks)==0:
+      if len(all_bricks) == 0:
            #Display Level Complete Message for 3 seconds
             font = pygame.font.Font(None, 74)
             text = font.render("LEVEL COMPLETE", 1, WHITE)
@@ -130,7 +130,7 @@ while carryOn:
             pygame.time.wait(3000)
 
             #Stop the Game
-            carryOn=False
+            carryOn = False
     # --- Drawing code should go here
     # First, clear the screen to dark blue.
     screen.fill(DARKBLUE)
