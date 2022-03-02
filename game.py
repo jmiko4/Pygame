@@ -39,19 +39,19 @@ ball.rect.y = 195
 all_bricks = pygame.sprite.Group()
 for i in range(7):
     brick = Brick(RED,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 60
     all_sprites_list.add(brick)
     all_bricks.add(brick)
 for i in range(7):
     brick = Brick(ORANGE,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 100
     all_sprites_list.add(brick)
     all_bricks.add(brick)
 for i in range(7):
     brick = Brick(YELLOW,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 140
     all_sprites_list.add(brick)
     all_bricks.add(brick)

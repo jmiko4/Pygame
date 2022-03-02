@@ -2,7 +2,7 @@
 import pygame
 #Let's import the Paddle Class & the Ball Class
 from paddle import Paddle
-from ball import Ball
+from ball_old import ball
 from brick import Brick
 
 pygame.init()
@@ -19,6 +19,9 @@ score = 0
 lives = 3
 ball_speed = 5
 
+WIDTH = 500
+HEIGHT = 500
+
 # Open a new window
 size = (800, 600)
 screen = pygame.display.set_mode(size)
@@ -33,9 +36,7 @@ paddle.rect.x = 350
 paddle.rect.y = 560
 
 #Create the ball sprite
-ball = Ball(WHITE,10,10)
-ball.rect.x = 345
-ball.rect.y = 195
+ball = ball(WHITE,10,10)
 
 all_bricks = pygame.sprite.Group()
 for i in range(7):
@@ -59,7 +60,7 @@ for i in range(7):
 
 # Add the paddle and the ball to the list of sprites
 all_sprites_list.add(paddle)
-all_sprites_list.add(ball)
+#all_sprites_list.add(ball)
 
 # The loop will carry on until the user exits the game (e.g. clicks the close button).
 carryOn = True
@@ -68,7 +69,7 @@ carryOn = True
 clock = pygame.time.Clock()
 
 # -------- Main Program Loop -----------
-ball = ball(ball_speed, 200, 200)
+#ball = ball(ball_speed, 200, 200)
 
 
 while carryOn:
