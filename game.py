@@ -101,8 +101,8 @@ while carryOn:
             screen.blit(text, (250,300))
             pygame.display.flip()
             pygame.time.wait(3000)
-            webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=61s')
-
+#            webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=61s')
+            webbrowser.open('https://www.youtube.com/watch?v=26lZvxwWzY0')
             #Stop the Game
             carryOn=False
 
