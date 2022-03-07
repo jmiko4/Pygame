@@ -131,11 +131,7 @@ while carryOn:
             webbrowser.open('https://www.youtube.com/watch?v=MoI8Z8Dq1yY')
 
             #Stop the Game
-<<<<<<< HEAD
-            carryOn=False
-=======
             carryOn = False
->>>>>>> 95488032f4b4319e096629dbb37b667a3f6c5d6c
     # --- Drawing code should go here
     # First, clear the screen to dark blue.
     screen.fill(DARKBLUE)
