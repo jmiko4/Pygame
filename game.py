@@ -4,6 +4,7 @@ import pygame
 from paddle import Paddle
 from ball import Ball
 from brick import Brick
+import webbrowser
 
 pygame.init()
 
@@ -39,19 +40,19 @@ ball.rect.y = 195
 all_bricks = pygame.sprite.Group()
 for i in range(7):
     brick = Brick(RED,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 60
     all_sprites_list.add(brick)
     all_bricks.add(brick)
 for i in range(7):
     brick = Brick(ORANGE,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 100
     all_sprites_list.add(brick)
     all_bricks.add(brick)
 for i in range(7):
     brick = Brick(YELLOW,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 140
     all_sprites_list.add(brick)
     all_bricks.add(brick)
@@ -78,9 +79,9 @@ while carryOn:
     #Moving the paddle when the use uses the arrow keys
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        paddle.moveLeft(5)
+        paddle.moveLeft(8)
     if keys[pygame.K_RIGHT]:
-        paddle.moveRight(5)
+        paddle.moveRight(8)
 
     # --- Game logic should go here
     all_sprites_list.update()
@@ -100,11 +101,12 @@ while carryOn:
             screen.blit(text, (250,300))
             pygame.display.flip()
             pygame.time.wait(3000)
-
+#            webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=61s')
+            webbrowser.open('https://www.youtube.com/watch?v=26lZvxwWzY0')
             #Stop the Game
             carryOn=False
 
-    if ball.rect.y<40:
+    if ball.rect.y < 40:
         ball.velocity[1] = -ball.velocity[1]
 
     #Detect collisions between the ball and the paddles
@@ -119,16 +121,21 @@ while carryOn:
       ball.bounce()
       score += 1
       brick.kill()
-      if len(all_bricks)==0:
+      if len(all_bricks) == 0:
            #Display Level Complete Message for 3 seconds
-            font = pygame.font.Font(None, 74)
-            text = font.render("LEVEL COMPLETE", 1, WHITE)
+            font = pygame.font.Font(None, 54)
+            text = font.render("CONGRATULATION YOU WON", 1, WHITE)
             screen.blit(text, (200,300))
             pygame.display.flip()
             pygame.time.wait(3000)
+            webbrowser.open('https://www.youtube.com/watch?v=MoI8Z8Dq1yY')
 
             #Stop the Game
+<<<<<<< HEAD
             carryOn=False
+=======
+            carryOn = False
+>>>>>>> 95488032f4b4319e096629dbb37b667a3f6c5d6c
     # --- Drawing code should go here
     # First, clear the screen to dark blue.
     screen.fill(DARKBLUE)
