@@ -17,10 +17,7 @@ YELLOW = (255,255,0)
 
 score = 0
 lives = 3
-<<<<<<< HEAD
-=======
 ball_speed = 5
->>>>>>> 582cab31363dd5f89d7090c2a84a290982fc7001
 
 # Open a new window
 size = (800, 600)
@@ -70,13 +67,9 @@ carryOn = True
 # The clock will be used to control how fast the screen updates
 clock = pygame.time.Clock()
 
-<<<<<<< HEAD
-# -------- Main Program Loop -----------
-=======
 ball = ball(ball_speed, 200, 200)
 
 
->>>>>>> 582cab31363dd5f89d7090c2a84a290982fc7001
 while carryOn:
     # --- Main event loop
     for event in pygame.event.get(): # User did something
@@ -138,13 +131,10 @@ while carryOn:
             #Stop the Game
             carryOn=False
 
-<<<<<<< HEAD
-=======
 #    if pygame.sprite.collide_mask(ball, paddle):
 #        ball.bounce_vertical()
 
 
->>>>>>> 582cab31363dd5f89d7090c2a84a290982fc7001
     # --- Drawing code should go here
     # First, clear the screen to dark blue.
     screen.fill(DARKBLUE)
