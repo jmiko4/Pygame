@@ -1,9 +1,15 @@
+'''
+Bing Bong
+'''
+
 #Import the pygame library and initialise the game engine
 import pygame
 #Let's import the Paddle Class & the Ball Class
 from paddle import Paddle
 from ball import Ball
 from brick import Brick
+import webbrowser
+import moviepy.editor
 
 pygame.init()
 
@@ -15,9 +21,14 @@ RED = (255,0,0)
 ORANGE = (255,100,0)
 YELLOW = (255,255,0)
 
+FPS = 60
+
 score = 0
 lives = 3
+<<<<<<< HEAD
 ball_speed = 5
+=======
+>>>>>>> 8332aab7fe42712688ba730717407c57be6e11ce
 
 # Open a new window
 size = (800, 600)
@@ -40,19 +51,19 @@ ball.rect.y = 195
 all_bricks = pygame.sprite.Group()
 for i in range(7):
     brick = Brick(RED,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 60
     all_sprites_list.add(brick)
     all_bricks.add(brick)
 for i in range(7):
     brick = Brick(ORANGE,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 100
     all_sprites_list.add(brick)
     all_bricks.add(brick)
 for i in range(7):
     brick = Brick(YELLOW,80,30)
-    brick.rect.x = 60 + i* 100
+    brick.rect.x = 60 + i * 100
     brick.rect.y = 140
     all_sprites_list.add(brick)
     all_bricks.add(brick)
@@ -66,22 +77,30 @@ carryOn = True
 
 # The clock will be used to control how fast the screen updates
 clock = pygame.time.Clock()
+<<<<<<< HEAD
 
 ball = ball(ball_speed, 200, 200)
+=======
+# -------- Main Program Loop -----------
+>>>>>>> 8332aab7fe42712688ba730717407c57be6e11ce
 
+file = "music.mp3"
+
+pygame.mixer.init()
+pygame.mixer.music.load(file)
+pygame.mixer.music.play(-1) # If the loops is -1 then the music will repeat indefinitely.
 
 while carryOn:
     # --- Main event loop
     for event in pygame.event.get(): # User did something
         if event.type == pygame.QUIT: # If user clicked close
               carryOn = False # Flag that we are done so we exit this loop
-
     #Moving the paddle when the use uses the arrow keys
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        paddle.moveLeft(5)
+        paddle.moveLeft(8)
     if keys[pygame.K_RIGHT]:
-        paddle.moveRight(5)
+        paddle.moveRight(8)
 
     # --- Game logic should go here
     all_sprites_list.update()
@@ -101,11 +120,16 @@ while carryOn:
             screen.blit(text, (250,300))
             pygame.display.flip()
             pygame.time.wait(3000)
+            # webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=61s')
+            # webbrowser.open('https://www.youtube.com/watch?v=26lZvxwWzY0')
 
+            # pygame.init()
+            video = moviepy.editor.VideoFileClip("win_1.mp4")
+            video.preview()
             #Stop the Game
             carryOn=False
 
-    if ball.rect.y<40:
+    if ball.rect.y < 40:
         ball.velocity[1] = -ball.velocity[1]
 
     #Detect collisions between the ball and the paddles
@@ -120,15 +144,21 @@ while carryOn:
       ball.bounce()
       score += 1
       brick.kill()
-      if len(all_bricks)==0:
+      if len(all_bricks) == 0:
            #Display Level Complete Message for 3 seconds
-            font = pygame.font.Font(None, 74)
-            text = font.render("LEVEL COMPLETE", 1, WHITE)
+            font = pygame.font.Font(None, 40)
+            text = font.render("CONGRATULATION YOU WON", 1, WHITE)
             screen.blit(text, (200,300))
             pygame.display.flip()
             pygame.time.wait(3000)
-
+            # webbrowser.open('https://www.youtube.com/watch?v=MoI8Z8Dq1yY')
+            # movie = pygame.movie.Movie('C:\Users\Facundo\Documents\Python stuff\Pygame\win.mp4')
+            # mrect = pygame.Rect(0,0,140,113)
+            # movie.set_display(screen, mrect.move(65, 150))
+            # movie.set_volume(0)
+            # movie.play()
             #Stop the Game
+<<<<<<< HEAD
             carryOn=False
 
 #    if pygame.sprite.collide_mask(ball, paddle):
@@ -136,6 +166,13 @@ while carryOn:
 
 
     # --- Drawing code should go here
+=======
+            # pygame.init()
+            video = moviepy.editor.VideoFileClip("lose.mp4")
+            video.preview()
+            carryOn = False
+    # # --- Drawing code should go here
+>>>>>>> 8332aab7fe42712688ba730717407c57be6e11ce
     # First, clear the screen to dark blue.
     screen.fill(DARKBLUE)
     pygame.draw.line(screen, WHITE, [0, 38], [800, 38], 2)
