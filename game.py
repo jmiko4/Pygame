@@ -25,10 +25,6 @@ FPS = 60
 
 score = 0
 lives = 3
-<<<<<<< HEAD
-ball_speed = 5
-=======
->>>>>>> 8332aab7fe42712688ba730717407c57be6e11ce
 
 # Open a new window
 size = (800, 600)
@@ -77,12 +73,7 @@ carryOn = True
 
 # The clock will be used to control how fast the screen updates
 clock = pygame.time.Clock()
-<<<<<<< HEAD
-
-ball = ball(ball_speed, 200, 200)
-=======
 # -------- Main Program Loop -----------
->>>>>>> 8332aab7fe42712688ba730717407c57be6e11ce
 
 file = "music.mp3"
 
@@ -158,21 +149,11 @@ while carryOn:
             # movie.set_volume(0)
             # movie.play()
             #Stop the Game
-<<<<<<< HEAD
-            carryOn=False
-
-#    if pygame.sprite.collide_mask(ball, paddle):
-#        ball.bounce_vertical()
-
-
-    # --- Drawing code should go here
-=======
             # pygame.init()
             video = moviepy.editor.VideoFileClip("lose.mp4")
             video.preview()
             carryOn = False
     # # --- Drawing code should go here
->>>>>>> 8332aab7fe42712688ba730717407c57be6e11ce
     # First, clear the screen to dark blue.
     screen.fill(DARKBLUE)
     pygame.draw.line(screen, WHITE, [0, 38], [800, 38], 2)
