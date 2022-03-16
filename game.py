@@ -20,6 +20,8 @@ LIGHTBLUE = (0,176,240)
 RED = (255,0,0)
 ORANGE = (255,100,0)
 YELLOW = (255,255,0)
+PINK=(255, 28, 194)
+BLACK= (1,1,1)
 
 FPS = 60
 
@@ -74,9 +76,13 @@ carryOn = True
 
 # The clock will be used to control how fast the screen updates
 clock = pygame.time.Clock()
-ball = ball(ball_speed, 200, 200)
+# ball = Ball(ball_speed, 200, 200)
 
 file = "music.mp3"
+
+bg = pygame.image.load("pizza_1.jpg")
+
+
 
 pygame.mixer.init()
 pygame.mixer.music.load(file)
@@ -158,7 +164,7 @@ while carryOn:
 
     # --- Drawing code should go here
             # pygame.init()
-            video = moviepy.editor.VideoFileClip("lose.mp4")
+            video = moviepy.editor.VideoFileClip("win_1.mp4")
             video.preview()
             carryOn = False
     # # --- Drawing code should go here
@@ -172,7 +178,7 @@ while carryOn:
     screen.blit(text, (20,10))
     text = font.render("Lives: " + str(lives), 1, WHITE)
     screen.blit(text, (650,10))
-
+    screen.blit(bg, (0, 0))
     #Now let's draw all the sprites in one go. (For now we only have 2 sprites!)
     all_sprites_list.draw(screen)
 
