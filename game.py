@@ -25,6 +25,7 @@ FPS = 60
 
 score = 0
 lives = 3
+ball_speed = 5
 
 # Open a new window
 size = (800, 600)
@@ -73,7 +74,7 @@ carryOn = True
 
 # The clock will be used to control how fast the screen updates
 clock = pygame.time.Clock()
-# -------- Main Program Loop -----------
+ball = Ball(ball_speed, 200, 200)
 
 file = "music.mp3"
 
@@ -115,7 +116,7 @@ while carryOn:
             # webbrowser.open('https://www.youtube.com/watch?v=26lZvxwWzY0')
 
             # pygame.init()
-            video = moviepy.editor.VideoFileClip("win_1.mp4")
+            video = moviepy.editor.VideoFileClip("Pizza_Time.mp4")
             video.preview()
             #Stop the Game
             carryOn=False
@@ -149,6 +150,13 @@ while carryOn:
             # movie.set_volume(0)
             # movie.play()
             #Stop the Game
+            carryOn=False
+
+#    if pygame.sprite.collide_mask(ball, paddle):
+#        ball.bounce_vertical()
+
+
+    # --- Drawing code should go here
             # pygame.init()
             video = moviepy.editor.VideoFileClip("lose.mp4")
             video.preview()
