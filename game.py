@@ -74,7 +74,7 @@ carryOn = True
 
 # The clock will be used to control how fast the screen updates
 clock = pygame.time.Clock()
-ball = Ball(ball_speed, 200, 200)
+# ball = Ball(ball_speed, 200, 200)
 
 file = "music.mp3"
 
@@ -158,7 +158,7 @@ while carryOn:
 
     # --- Drawing code should go here
             # pygame.init()
-            video = moviepy.editor.VideoFileClip("lose.mp4")
+            video = moviepy.editor.VideoFileClip("win_1.mp4")
             video.preview()
             carryOn = False
     # # --- Drawing code should go here
