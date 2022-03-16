@@ -74,7 +74,7 @@ carryOn = True
 
 # The clock will be used to control how fast the screen updates
 clock = pygame.time.Clock()
-ball = ball(ball_speed, 200, 200)
+ball = Ball(ball_speed, 200, 200)
 
 file = "music.mp3"
 
