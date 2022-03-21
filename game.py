@@ -13,7 +13,7 @@ import moviepy.editor
 
 pygame.init()
 
-# Define some colors
+# Define some color
 WHITE = (255,255,255)
 DARKBLUE = (36,90,190)
 LIGHTBLUE = (0,176,240)
