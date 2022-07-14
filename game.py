@@ -13,7 +13,7 @@ import moviepy.editor
 
 pygame.init()
 
-# Define some colors
+# Define some color
 WHITE = (255,255,255)
 DARKBLUE = (36,90,190)
 LIGHTBLUE = (0,176,240)
@@ -126,6 +126,7 @@ while carryOn:
             video.preview()
             #Stop the Game
             carryOn=False
+            #comment
 
     if ball.rect.y < 40:
         ball.velocity[1] = -ball.velocity[1]
@@ -171,6 +172,7 @@ while carryOn:
     # First, clear the screen to dark blue.
     screen.fill(DARKBLUE)
     pygame.draw.line(screen, WHITE, [0, 38], [800, 38], 2)
+    screen.blit(bg, (0, 0))
 
     #Display the score and the number of lives at the top of the screen
     font = pygame.font.Font(None, 34)
@@ -178,7 +180,6 @@ while carryOn:
     screen.blit(text, (20,10))
     text = font.render("Lives: " + str(lives), 1, WHITE)
     screen.blit(text, (650,10))
-    screen.blit(bg, (0, 0))
     #Now let's draw all the sprites in one go. (For now we only have 2 sprites!)
     all_sprites_list.draw(screen)
 
